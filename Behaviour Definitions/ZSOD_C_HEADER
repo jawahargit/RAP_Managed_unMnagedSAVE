@@ -1,0 +1,31 @@
+projection;
+strict ( 2 );
+use draft;
+
+define behavior for ZSOD_C_HEADER alias SO_Header
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+
+  use action Resume;
+  use action Edit;
+  use action Activate;
+  use action Discard;
+  use action Prepare;
+
+  use association _Item { create; with draft; }
+}
+
+define behavior for ZSOD_C_ITEM alias SO_Item
+use etag
+{
+  use update;
+  use delete;
+
+  use association _Header { with draft; }
+}
+
+
