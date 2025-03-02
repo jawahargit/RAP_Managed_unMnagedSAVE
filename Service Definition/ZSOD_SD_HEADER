@@ -1,0 +1,5 @@
+@EndUserText.label: 'Sevice definition'
+define service ZSOD_SD_HEADER {
+  expose ZSOD_C_HEADER as Header;
+  expose ZSOD_C_ITEM   as Item;
+}
